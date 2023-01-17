@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "ansible-archlinux"
+name = "ansible-cachyos"
 version = "0.0.1"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["EnbyTux <enbytux@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"

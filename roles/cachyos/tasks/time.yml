@@ -1,0 +1,13 @@
+---
+- name: Uninstall ntpd
+  pacman:
+    name: ntp
+    state: absent
+  become: true
+
+- name: Enable network time
+  systemd:
+    name: systemd-timesyncd
+    state: started
+    enabled: true
+  become: true

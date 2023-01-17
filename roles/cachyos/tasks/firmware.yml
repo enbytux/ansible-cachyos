@@ -1,0 +1,5 @@
+---
+- name: Install firmware
+  pacman:
+    name: linux-firmware
+  become: true

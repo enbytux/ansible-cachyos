@@ -1,0 +1,12 @@
+---
+- name: Install networking tools
+  pacman:
+    name:
+      - dhcpcd
+      - ifplugd
+      - netctl
+      - openvpn
+      - wireguard-tools
+      - wpa_supplicant
+      - iw
+  become: true

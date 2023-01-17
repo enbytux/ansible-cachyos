@@ -1,0 +1,36 @@
+---
+- name: Install utilities
+  pacman:
+    name:
+      - aria2
+      - bcc-tools
+      - bind-tools
+      - curl
+      - gvfs
+      - htop
+      - httpie
+      - iotop
+      - iw
+      - jq
+      - less
+      - nmap
+      - openssh
+      - python-bcc
+      - ripgrep
+      - rsync
+      - shellcheck
+      - strace
+      - sysstat
+      - udisks2
+      - unzip
+      - usbutils
+      - which
+  become: true
+
+- name: Install applications
+  pacman:
+    name:
+      - opera
+      - opera-ffmpeg-codecs
+      - openrgb-git 
+  become: true

@@ -1,0 +1,11 @@
+---
+- name: Install audio tools
+  pacman:
+    name:
+      - alsa-firmware
+      - alsa-utils
+      - pipewire-pulse
+      - pipewire-alsa
+      - audacity
+      - lmms
+  become: true

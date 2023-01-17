@@ -1,15 +1,15 @@
 ---
 - hosts: localhost
   connection: local
-  roles:
-    - archlinux
+  roles: 
+  - cachyos-ace
   vars_prompt:
-    - name: "archlinux_username"
-      prompt: "Enter your system username"
+    - name: "cachyos_username"
+      prompt: "Enter your username"
       private: false
-    - name: "archlinux_user_real_name"
-      prompt: "Enter your full real name"
+    - name: "cachyos_realname"
+      prompt: "Enter your full name"
       private: false
-    - name: "archlinux_user_email"
+    - name: "cachyos_email"
       prompt: "Enter your email address"
       private: false

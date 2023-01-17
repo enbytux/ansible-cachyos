@@ -1,0 +1,10 @@
+---
+- name: Install filesystem tools
+  pacman:
+    name:
+      - cryptsetup
+      - e2fsprogs
+      - f2fs-tools
+      - ntfs-3g
+      - exfatprogs
+  become: true

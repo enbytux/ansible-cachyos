@@ -1,0 +1,25 @@
+---
+- name: Install Plasma
+  pacman:
+    name:
+      - xorg
+      - dmenu
+      - plasma-desktops
+      - sddm
+      - kde-gtk-config
+      - konsole
+      - kdeplasma-addons
+      - plasma-nm
+      - plasma-pa
+      - dolphin
+      - powerdevil
+      - kscreen
+      - discover
+      - plasma-firewall
+      - kwallet-pam
+      - kwalletmanager
+      - kwayland-integration
+      - sddm-kcm
+      - yakuake
+      - bluedevil 
+  become: true

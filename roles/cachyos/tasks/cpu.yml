@@ -1,0 +1,8 @@
+---
+- name: Install AMD microcode and releveant packages
+  pacman:
+    name:
+      - amd-ucode
+      - auto-cpufreq
+  when: "'AuthenticAMD' in ansible_processor"
+  become: true

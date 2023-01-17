@@ -1,0 +1,9 @@
+---
+- name: Install rustup
+  pacman:
+    name:
+      - rustup
+      - rust
+      - rust-wasm
+      - rust-musl
+  become: true

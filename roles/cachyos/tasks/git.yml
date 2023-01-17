@@ -1,0 +1,53 @@
+---
+- name: Install git
+  pacman:
+    name: git
+  become: true
+
+- name: Configure git name
+  git_config:
+    name: user.name
+    value: "EnbyTux"
+    scope: global
+  become: true
+  become_user: "EnbyTux"
+
+- name: Configure git email
+  git_config:
+    name: user.email
+    value: "enbytux@gmail.com"
+    scope: global
+  become: true
+  become_user: "EnbyTux"
+
+- name: Create global gitignore file
+  file:
+    path: /home/{{ cachyos_username }}/.gitignore
+    state: file
+    owner: "{{ cachyos_username }}"
+    group: users
+  become: true
+  become_user: "{{ cachyos_username }}"
+
+- name: Configure global gitignore location
+  git_config:
+    name: core.excludesfile
+    value: "~/.gitignore"
+    scope: global
+  become: true
+  become_user: "{{ cachyos_username }}"
+
+- name: Configure global gitignore
+  lineinfile:
+    path: /home/{{ cachyos_username }}/.gitignore
+    line: "{{ item }}"
+  with_items:
+    - "*.swo"
+    - "*.swp"
+    - ".DS_store"
+    - ".direnv/"
+    - ".envrc"
+    - ".vagrant.d/"
+    - ".ycm_extra_conf.py"
+  become: true
+  become_user: "{{ cachyos_username }}"

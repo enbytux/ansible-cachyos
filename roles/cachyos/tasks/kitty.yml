@@ -1,0 +1,23 @@
+---
+- name: Install Kitty
+  pacman:
+    name: kitty
+  become: true
+
+- name: Create Kitty configuration directory
+  file:
+    dest: /home/{{ archlinux_username }}/.config/kitty
+    state: directory
+    owner: "{{ archlinux_username }}"
+    group: users
+    mode: 0755
+  become: true
+
+- name: Configure Kitty
+  template:
+    src: kitty.conf
+    dest: /home/{{ archlinux_username }}/.config/kitty/kitty.conf
+    owner: "{{ archlinux_username }}"
+    group: users
+    mode: 0644
+  become: true
